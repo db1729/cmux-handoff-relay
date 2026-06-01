@@ -1,0 +1,8 @@
+Example worker output before the handoff.
+
+<<<HANDOFF target=review submit=false>>>
+Review the parser and CLI safety behavior.
+Confirm that malformed latest blocks fail safely.
+<<<END_HANDOFF>>>
+
+More terminal text after the handoff.

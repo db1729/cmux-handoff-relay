@@ -1,0 +1,8 @@
+{
+  "roles": {
+    "main": "surface:1",
+    "review": "surface:2",
+    "qa": "surface:3",
+    "docs": "surface:4"
+  }
+}

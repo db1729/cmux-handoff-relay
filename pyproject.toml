@@ -1,0 +1,45 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "cmux-handoff-relay"
+version = "0.2.0"
+description = "A safe local CLI for relaying explicit cmux AI worker handoffs."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { file = "LICENSE" }
+authors = [
+  { name = "Sungmin Kim" }
+]
+keywords = ["ai-agents", "cli", "cmux", "codex", "developer-tools", "handoff"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Environment :: Console",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: MacOS",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Software Development",
+  "Topic :: Utilities"
+]
+dependencies = []
+
+[project.optional-dependencies]
+test = ["pytest>=7"]
+dev = ["build>=1", "pytest>=7"]
+
+[project.scripts]
+cmux-handoff-relay = "cmux_handoff_relay.cli:main"
+cmux-handoff = "cmux_handoff_relay.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/cmux_handoff_relay"]
+
+[tool.pytest.ini_options]
+addopts = "-q"
+pythonpath = ["src"]
+testpaths = ["tests"]

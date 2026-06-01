@@ -1,0 +1,36 @@
+{
+  "roles": {
+    "main": {
+      "surface": "surface:1",
+      "agent": "codex",
+      "ce_default": "/ce-work",
+      "workflow_profile": "standard",
+      "reasoning_profile": "high",
+      "allow_targets": ["review", "qa", "docs"]
+    },
+    "review": {
+      "surface": "surface:2",
+      "agent": "claude",
+      "ce_default": "/ce-code-review",
+      "workflow_profile": "light",
+      "reasoning_profile": "medium",
+      "allow_targets": ["main", "qa", "docs"]
+    },
+    "qa": {
+      "surface": "surface:3",
+      "agent": "gemini",
+      "ce_default": "/ce-debug",
+      "workflow_profile": "light",
+      "reasoning_profile": "low",
+      "allow_targets": ["main", "review", "docs"]
+    },
+    "docs": {
+      "surface": "surface:4",
+      "agent": "cursor",
+      "ce_default": "/ce-compound",
+      "workflow_profile": "light",
+      "reasoning_profile": "minimal",
+      "allow_targets": ["review"]
+    }
+  }
+}
